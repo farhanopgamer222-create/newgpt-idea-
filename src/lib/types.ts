@@ -1,0 +1,26 @@
+export type User = { id: string; name: string; email: string };
+export type Conversation = { id: string; title: string; model: string; updatedAt: string; createdAt?: string };
+export type Message = { id: string; role: "user" | "assistant"; content: string; createdAt?: string };
+export type ModelId = "farhan" | "gpt" | "claude" | "gemini" | "deepseek";
+export const MODELS: { id: ModelId; name: string; provider: string; description: string; apiModel: string; color: string; badge: string }[] = [
+  { id: "farhan", name: "FarhanGPT", provider: "Smart auto-routing", description: "Your everyday companion. Fast, capable, and a little brilliant.", apiModel: "openrouter/free", color: "#b09aff", badge: "Free" },
+  { id: "gpt", name: "GPT-4.1 mini", provider: "OpenAI", description: "A versatile thinker for writing, code, and everyday tasks.", apiModel: "openai/gpt-4.1-mini", color: "#72cfb2", badge: "Versatile" },
+  { id: "claude", name: "Claude Sonnet", provider: "Anthropic", description: "Thoughtful writing, careful reasoning, and creative exploration.", apiModel: "anthropic/claude-sonnet-4.6", color: "#e3ad8d", badge: "Creative" },
+  { id: "gemini", name: "Gemini 2.5 Flash", provider: "Google", description: "Quick answers and a fresh perspective on complex ideas.", apiModel: "google/gemini-2.5-flash", color: "#82afff", badge: "Fast" },
+  { id: "deepseek", name: "DeepSeek", provider: "DeepSeek", description: "A sharp problem-solver for logic, mathematics, and code.", apiModel: "deepseek/deepseek-v3.2", color: "#8da7ff", badge: "Reasoning" },
+];
+export type Prompt = { id: string; title: string; description: string; prompt: string; category: "Writing" | "Coding" | "Learning" | "Everyday" };
+export const PROMPTS: Prompt[] = [
+  { id: "write", title: "Find the right words", description: "Turn a small thought into something worth reading.", prompt: "Help me write something great. First, ask me what I am writing and who it is for, then help me shape my ideas into clear, engaging words.", category: "Writing" },
+  { id: "code", title: "Build something great", description: "From your first line to your next big idea.", prompt: "I want to build a useful web app. Suggest 3 creative, achievable ideas and explain a simple technology stack for each. Ask about my experience level.", category: "Coding" },
+  { id: "learn", title: "Make the complex simple", description: "A fresh perspective. Your next lightbulb moment.", prompt: "Teach me something fascinating in a simple way. Pick an interesting scientific concept, use an everyday analogy, and finish with a quick question to test my understanding.", category: "Learning" },
+  { id: "ideas", title: "See what’s possible", description: "A little spark for your next big thing.", prompt: "Be my brainstorming partner. Help me find a creative project that combines my interests. Start by asking me 3 interesting questions about things I enjoy.", category: "Everyday" },
+  { id: "email", title: "An email that sounds like you", description: "Professional, friendly, and perfectly clear.", prompt: "Help me draft a professional but warm email. Ask me who it is for, the main point, and what I want them to do next.", category: "Writing" },
+  { id: "debug", title: "Untangle a tricky bug", description: "A fresh pair of eyes for your code.", prompt: "Act as a patient debugging partner. Ask me to paste my code, the error message, and what I expected. Walk me through how to find and fix the root cause.", category: "Coding" },
+  { id: "language", title: "Say hello to a new language", description: "Small lessons. A whole new world.", prompt: "Be my friendly language tutor. Ask which language I want to learn and my current level, then start a simple, useful conversation and gently correct my mistakes.", category: "Learning" },
+  { id: "plan", title: "A little less overwhelm", description: "Turn a busy week into a workable plan.", prompt: "Help me plan my week realistically. Ask about my top 3 priorities, fixed commitments, and energy levels. Then make a flexible plan with time for rest.", category: "Everyday" },
+  { id: "story", title: "Start a story worth telling", description: "New characters, unexpected adventures.", prompt: "Let us create a short story together. Suggest 3 unusual story premises in different genres, then let me pick one before we develop it.", category: "Writing" },
+  { id: "explain", title: "Understand the code", description: "Learn the why, not just the how.", prompt: "Help me understand a piece of code. Ask me to paste it, then explain its purpose, walk through each part, and suggest one improvement.", category: "Coding" },
+  { id: "study", title: "Your personal study buddy", description: "Build a plan that makes learning stick.", prompt: "Create a personalized study plan for me. Ask what subject I am studying, my goal, how much time I have, and what I find hardest. Use active recall and spaced repetition.", category: "Learning" },
+  { id: "trip", title: "Find your next adventure", description: "A thoughtful escape, made just for you.", prompt: "Help me plan a memorable trip. First ask about my starting city, budget, dates, and whether I prefer nature, food, history, or adventure.", category: "Everyday" },
+];
